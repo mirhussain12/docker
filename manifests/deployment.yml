@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mirhussaindocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mirhussaindocker
+  template:
+    metadata:
+      labels:
+        app: mirhussaindocker 
+    spec:
+      containers:
+        - name: mirhussaindocker 
+          image: akswinregistry.azurecr.io/mirhussaindocker
+          ports:
+          - containerPort: 8080
